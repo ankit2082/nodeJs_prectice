@@ -1,0 +1,32 @@
+<div class="container">
+
+        <table>
+            <thead>
+                <tr>
+                    {{#each header}}
+                    <th>{{this}}</th>
+                    {{/each}}
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {{#if record.length}}  
+                {{!-- Note: handlebars does not support record.length>0 like this   --}}
+                    {{#each record}}
+                    <tr>
+                        <td>{{this.name}}</td>
+                        <td>{{this.email}}</td>
+                        <td>{{this.file}}</td>
+                        <td><a href="/" class="btn btn-primary">delete</a></td>
+                    </tr>
+                    {{/each}}
+                    {{else}}
+                    <tr>
+                        <td colspan="4">No data</td>
+                    </tr>
+                {{/if}}
+
+            </tbody>
+
+        </table>
+    </div>
